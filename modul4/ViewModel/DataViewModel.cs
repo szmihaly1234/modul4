@@ -10,5 +10,9 @@ namespace modul4.ViewModel
     public class DataViewModel
     {
         public Athlete athlete { get; set; }
+        public DataViewModel(Athlete athlete)
+        {
+            this.athlete = athlete;
+        }
     }
 }

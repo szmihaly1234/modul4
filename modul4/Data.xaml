@@ -6,13 +6,17 @@
         xmlns:local="clr-namespace:modul4"
         xmlns:vms="clr-namespace:modul4.ViewModel"
         mc:Ignorable="d"
-        Title="Data" Height="450" Width="800">
+        Title="Data" Height="450" Width="450">
     <Window.DataContext>
         <vms:MainWindowViewModel />
     </Window.DataContext>
     <Grid>
         <StackPanel>
-            <Label Content="{Binding Athletes.Name}"></Label>
+            <Label Content="{Binding athlete.Name}" Padding="25"></Label>
+            <Label Content="{Binding athlete.PersonalBest}" Padding="25"></Label>
+            <Label Content="{Binding athlete.YearlyBest}" Padding="25"></Label>
+            <Label Content="{Binding athlete.Club}" Padding="25"></Label>
+            <Label Content="{Binding athlete.Value}" Padding="25"></Label>
         </StackPanel>
     </Grid>
 </Window>
