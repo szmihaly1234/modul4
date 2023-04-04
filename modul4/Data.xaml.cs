@@ -1,4 +1,5 @@
-﻿using System;
+﻿using modul4.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,11 @@ namespace modul4
     /// </summary>
     public partial class Data : Window
     {
-        public Data()
+        private Athlete athlete;
+        public Data(Athlete athlete)
         {
             InitializeComponent();
+            this.athlete = athlete;
         }
     }
 }

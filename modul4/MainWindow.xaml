@@ -40,8 +40,9 @@
             <Label Content="Menü" FontWeight="Bold" ></Label>
             <Button Content="Remove" Command="{Binding RemoveFromRaceCommand}" Padding="15"></Button>
             <Button Content="Add" Command="{Binding AddToRaceCommand}" Padding="15"></Button>
+            <Button Content="Info" Command="{Binding GetInfo}" Padding="15"></Button>
             <Button Content="Load" Command="{Binding Load}" Padding="15"></Button>
-            <Button Content="Save" Padding="15"></Button>
+            <Button Content="Save" Command="{Binding Save}" Padding="15"></Button>
         </StackPanel>
 
     </Grid>

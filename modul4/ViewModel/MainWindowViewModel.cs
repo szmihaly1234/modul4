@@ -45,6 +45,8 @@ namespace modul4.ViewModel
         public ICommand AddToRaceCommand { get; set; }
         public ICommand RemoveFromRaceCommand { get; set; }
         public ICommand Load { get; set; }
+        public ICommand GetInfo { get; set; }
+        public ICommand Save { get; set; }
         public static bool IsInDesignMode
         {
             get
@@ -83,7 +85,18 @@ namespace modul4.ViewModel
                     (Load as RelayCommand).NotifyCanExecuteChanged();
                 },
                 ()=>Athletes.Count() == 0);
-                
+
+
+            GetInfo = new RelayCommand(() =>
+            {
+                Data data = new Data(SelectedFromAthletes);
+                data.Show();
+            });
+
+            Save = new RelayCommand(() => {
+                Athletes.Clear();
+                (Save as RelayCommand).NotifyCanExecuteChanged();
+            });
 
             Messenger.Register<MainWindowViewModel, string, string>(this, "RaceInfo", (recipient, msg) =>
             {

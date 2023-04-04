@@ -13,6 +13,7 @@ namespace modul4.ViewModel
         public DataViewModel(Athlete athlete)
         {
             this.athlete = athlete;
+            
         }
     }
 }
