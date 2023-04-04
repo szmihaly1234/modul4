@@ -8,15 +8,15 @@
         mc:Ignorable="d"
         Title="Data" Height="450" Width="450">
     <Window.DataContext>
-        <vms:MainWindowViewModel />
+        <vms:DataViewModel />
     </Window.DataContext>
     <Grid>
         <StackPanel>
-            <Label Content="{Binding athlete.Name}" Padding="25"></Label>
-            <Label Content="{Binding athlete.PersonalBest}" Padding="25"></Label>
-            <Label Content="{Binding athlete.YearlyBest}" Padding="25"></Label>
-            <Label Content="{Binding athlete.Club}" Padding="25"></Label>
-            <Label Content="{Binding athlete.Value}" Padding="25"></Label>
+            <Label Content="{Binding Name}" Padding="25"></Label>
+            <Label Content="{Binding PersonalBest}" Padding="25"></Label>
+            <Label Content="{Binding YearlyBest}" Padding="25"></Label>
+            <Label Content="{Binding Club}" Padding="25"></Label>
+            <Label Content="{Binding Value}" Padding="25"></Label>
         </StackPanel>
     </Grid>
 </Window>
