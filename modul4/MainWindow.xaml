@@ -23,9 +23,9 @@
         <ListBox Grid.Column="0" ItemsSource="{Binding Athletes}" SelectedItem="{Binding SelectedFromAthletes}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel HorizontalAlignment="Center" Width="220" Background="{Binding CanRace,Converter={StaticResource colorconvert}}">
+                    <StackPanel HorizontalAlignment="Center" Width="999" Background="{Binding CanRace,Converter={StaticResource colorconvert}}">
                         <Label Content="{Binding Name}"></Label>
-                        <Label Content="{Binding PersonalBest}"></Label>
+                        <Label Content="{Binding Club}"></Label>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -35,7 +35,7 @@
                 <DataTemplate>
                     <StackPanel>
                         <Label Content="{Binding Name}"></Label>
-                        <Label Content="{Binding PersonalBest}"></Label>
+                        <Label Content="{Binding Club}"></Label>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

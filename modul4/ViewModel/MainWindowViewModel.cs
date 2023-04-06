@@ -90,7 +90,7 @@ namespace modul4.ViewModel
                     Athletes.Add(new Athlete("Korsós Anna", 1150, 1119, "random club2", 42, true));
                     Athletes.Add(new Athlete("Vajas István", 1350, 1219, "random club1", 46, true));
                     Athletes.Add(new Athlete("Nagy Patrik", 1150, 1139, "random club3", 144, true));
-                    Athletes.Add(new Athlete("Kalányos Vajk", 150, 1199, "random club5", 3, true));
+                    Athletes.Add(new Athlete("Kalányos Vajk", 11, 1, "random club5", 3, false));
                     (Load as RelayCommand).NotifyCanExecuteChanged();
                 },
                 ()=>Athletes.Count() == 0);
