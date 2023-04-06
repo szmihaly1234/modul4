@@ -20,7 +20,7 @@ namespace modul4.Helpers
             }
             else
             {
-                return Brushes.Green;
+                return Brushes.LightGreen;
             }
         }
 
