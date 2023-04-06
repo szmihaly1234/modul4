@@ -39,6 +39,7 @@ namespace modul4.Logic
             messenger.Send("Athlete removed", "RaceInfo");
         }
 
+
         public void SetupCollections(IList<Athlete> athletes, IList<Athlete> race)
         {
             this.athletes = athletes;

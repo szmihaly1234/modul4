@@ -101,9 +101,11 @@ namespace modul4.ViewModel
                 () => SelectedFromAthletes != null);
 
 
-            Save = new RelayCommand(() => {
-                string jsonData = JsonConvert.SerializeObject(Race);
-                File.WriteAllText("race.json", jsonData);
+            Save = new RelayCommand(() =>
+            {
+
+                SaveRaceWindow srw = new SaveRaceWindow(Race);
+                srw.ShowDialog();
                 (Save as RelayCommand).NotifyCanExecuteChanged();
             });
 
