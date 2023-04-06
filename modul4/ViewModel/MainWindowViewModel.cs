@@ -3,10 +3,12 @@ using Microsoft.Toolkit.Mvvm.DependencyInjection;
 using Microsoft.Toolkit.Mvvm.Input;
 using modul4.Logic;
 using modul4.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -84,6 +86,11 @@ namespace modul4.ViewModel
                     Athletes.Add(new Athlete("Ügyes Béla", 130, 119, "random club", 1,true));
                     Athletes.Add(new Athlete("Béna Bendegúz", 150, 119, "random club1", 2,false));
                     Athletes.Add(new Athlete("Lakatos Lóci", 150, 119, "random club2", 4, true));
+                    Athletes.Add(new Athlete("Lakatos Kemál", 10, 1, "random club3", 14, false));
+                    Athletes.Add(new Athlete("Korsós Anna", 1150, 1119, "random club2", 42, true));
+                    Athletes.Add(new Athlete("Vajas István", 1350, 1219, "random club1", 46, true));
+                    Athletes.Add(new Athlete("Nagy Patrik", 1150, 1139, "random club3", 144, true));
+                    Athletes.Add(new Athlete("Kalányos Vajk", 150, 1199, "random club5", 3, true));
                     (Load as RelayCommand).NotifyCanExecuteChanged();
                 },
                 ()=>Athletes.Count() == 0);
@@ -92,10 +99,11 @@ namespace modul4.ViewModel
             GetInfo = new RelayCommand(
                 () => logic.GetAthleteInfo(SelectedFromAthletes),
                 () => SelectedFromAthletes != null);
-  
+
 
             Save = new RelayCommand(() => {
-                Athletes.Clear();
+                string jsonData = JsonConvert.SerializeObject(Race);
+                File.WriteAllText("race.json", jsonData);
                 (Save as RelayCommand).NotifyCanExecuteChanged();
             });
 

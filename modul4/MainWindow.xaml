@@ -5,11 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:modul4"
         xmlns:vms="clr-namespace:modul4.ViewModel"
+        xmlns:helpers="clr-namespace:modul4.Helpers"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.DataContext>
         <vms:MainWindowViewModel />
     </Window.DataContext>
+    <Window.Resources>
+        <helpers:AthleteColor x:Key="colorconvert"/>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -19,7 +23,7 @@
         <ListBox Grid.Column="0" ItemsSource="{Binding Athletes}" SelectedItem="{Binding SelectedFromAthletes}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
+                    <StackPanel HorizontalAlignment="Center" Width="220" Background="{Binding CanRace,Converter={StaticResource colorconvert}}">
                         <Label Content="{Binding Name}"></Label>
                         <Label Content="{Binding PersonalBest}"></Label>
                     </StackPanel>
