@@ -23,7 +23,7 @@
         <ListBox Grid.Column="0" ItemsSource="{Binding Athletes}" SelectedItem="{Binding SelectedFromAthletes}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel HorizontalAlignment="Center" Width="999" Background="{Binding CanRace,Converter={StaticResource colorconvert}}">
+                    <StackPanel VerticalAlignment="Center" Width="300" Margin="5" Background="{Binding CanRace,Converter={StaticResource colorconvert}}">
                         <Label Content="{Binding Name}"></Label>
                         <Label Content="{Binding Club}"></Label>
                     </StackPanel>
