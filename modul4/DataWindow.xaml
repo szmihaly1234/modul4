@@ -6,17 +6,21 @@
         xmlns:local="clr-namespace:modul4"
         xmlns:vms="clr-namespace:modul4.ViewModel"
         mc:Ignorable="d"
-        Title="Data" Height="450" Width="450">
-    <Window.DataContext>
-        <vms:DataViewModel />
-    </Window.DataContext>
+        Title="Data" Height="600" Width="450">
     <Grid>
         <StackPanel>
-            <Label Content="{Binding actual.Name, UpdateSourceTrigger=Explicit}" Padding="25"></Label>
-            <Label Content="{Binding actual.Club, UpdateSourceTrigger=Explicit}" Padding="25"></Label>
-            <Label Content="{Binding actual.PersonalBest, UpdateSourceTrigger=Explicit}" Padding="25"></Label>
-            <Label Content="{Binding actual.YearlyBest, UpdateSourceTrigger=Explicit}" Padding="25"></Label>
-            <Label Content="{Binding actual.Value, UpdateSourceTrigger=Explicit}" Padding="25"></Label>
+            <Label Content="Név" Padding="15" Background="LightBlue"></Label>
+            <Label Content="{Binding actual.Name, UpdateSourceTrigger=Explicit}" Padding="15"></Label>
+            <Label Content="Klub" Padding="15" Background="LightBlue"></Label>
+            <Label Content="{Binding actual.Club, UpdateSourceTrigger=Explicit}" Padding="15"></Label>
+            <Label Content="Egyéni csúcs" Padding="15" Background="LightBlue"></Label>
+            <Label Content="{Binding actual.PersonalBest, UpdateSourceTrigger=Explicit}" Padding="15"></Label>
+            <Label Content="Éves csúcs" Padding="15" Background="LightBlue"></Label>
+            <Label Content="{Binding actual.YearlyBest, UpdateSourceTrigger=Explicit}" Padding="15"></Label>
+            <Label Content="Piaci érték" Padding="15" Background="LightBlue"></Label>
+            <Label Content="{Binding actual.Value, UpdateSourceTrigger=Explicit}" Padding="15"></Label>
+            <Label Content="Van engedélye?" Padding="15" Background="LightBlue"></Label>
+            <Label Content="{Binding actual.CanRace, UpdateSourceTrigger=Explicit}" Padding="15"></Label>
         </StackPanel>
     </Grid>
 </Window>

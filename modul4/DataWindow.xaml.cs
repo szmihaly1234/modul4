@@ -1,4 +1,5 @@
 ﻿using modul4.Models;
+using modul4.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,10 @@ namespace modul4
         public DataWindow(Athlete athlete)
         {
             InitializeComponent();
-            this.athlete = athlete;
+            var vm = new DataViewModel();
+            vm.Setup(athlete);
+            this.DataContext = vm;
         }
+
     }
 }
