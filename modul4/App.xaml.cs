@@ -9,6 +9,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using modul4.Services;
 
 namespace modul4
 {
@@ -22,6 +23,7 @@ namespace modul4
             Ioc.Default.ConfigureServices(
                 new ServiceCollection()
                     .AddSingleton<IAthleteLogic, AthleteLogic>()
+                    .AddSingleton<IGetAthleteInfo, GetAthleteInfoViaWindow>()
                     .AddSingleton<IMessenger>(WeakReferenceMessenger.Default)
                     .BuildServiceProvider()
                 );

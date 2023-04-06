@@ -17,7 +17,7 @@ namespace modul4.ViewModel
 {
     public class MainWindowViewModel : ObservableRecipient
     {
-        IAthleteLogic logic;
+        public IAthleteLogic logic;
         public ObservableCollection<Athlete> Athletes { get; set; }
         public ObservableCollection<Athlete> Race { get; set; }
         private Athlete selectedFromAthletes;
@@ -28,11 +28,10 @@ namespace modul4.ViewModel
             {
                 SetProperty(ref selectedFromAthletes, value);
                 (AddToRaceCommand as RelayCommand).NotifyCanExecuteChanged();
+                (GetInfo as RelayCommand).NotifyCanExecuteChanged();
             }
         }
         private Athlete selectedFromRace;
-        private IAthleteLogic? athleteLogic;
-
         public Athlete SelectedFromRace
         {
             get { return selectedFromRace; }
@@ -40,6 +39,7 @@ namespace modul4.ViewModel
             {
                 SetProperty(ref selectedFromRace, value);
                 (RemoveFromRaceCommand as RelayCommand).NotifyCanExecuteChanged();
+                (GetInfo as RelayCommand).NotifyCanExecuteChanged();
             }
         }
         public ICommand AddToRaceCommand { get; set; }
@@ -55,7 +55,8 @@ namespace modul4.ViewModel
                 return (bool)DependencyPropertyDescriptor.FromProperty(prop, typeof(FrameworkElement)).Metadata.DefaultValue;
             }
         }
-        public MainWindowViewModel() : this(IsInDesignMode ? null : Ioc.Default.GetService<IAthleteLogic>())
+        public MainWindowViewModel()
+            : this(IsInDesignMode ? null : Ioc.Default.GetService<IAthleteLogic>())
         {
 
         }
@@ -80,18 +81,18 @@ namespace modul4.ViewModel
 
             Load = new RelayCommand(
                 () => {
-                    Athletes.Add(new Athlete("asd", 130, 119, "random club", 1));
-                    Athletes.Add(new Athlete("asdfgasdf", 150, 119, "random club", 1));
+                    Athletes.Add(new Athlete("Ügyes Béla", 130, 119, "random club", 1,true));
+                    Athletes.Add(new Athlete("Béna Bendegúz", 150, 119, "random club1", 2,false));
+                    Athletes.Add(new Athlete("Lakatos Lóci", 150, 119, "random club2", 4, true));
                     (Load as RelayCommand).NotifyCanExecuteChanged();
                 },
                 ()=>Athletes.Count() == 0);
 
 
-            GetInfo = new RelayCommand(() =>
-            {
-                Data data = new Data(SelectedFromAthletes);
-                data.Show();
-            });
+            GetInfo = new RelayCommand(
+                () => logic.GetAthleteInfo(SelectedFromAthletes),
+                () => SelectedFromAthletes != null);
+  
 
             Save = new RelayCommand(() => {
                 Athletes.Clear();

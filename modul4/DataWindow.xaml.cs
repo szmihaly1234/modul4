@@ -16,12 +16,12 @@ using System.Windows.Shapes;
 namespace modul4
 {
     /// <summary>
-    /// Interaction logic for Data.xaml
+    /// Interaction logic for DataWindow.xaml
     /// </summary>
-    public partial class Data : Window
+    public partial class DataWindow : Window
     {
         private Athlete athlete;
-        public Data(Athlete athlete)
+        public DataWindow(Athlete athlete)
         {
             InitializeComponent();
             this.athlete = athlete;

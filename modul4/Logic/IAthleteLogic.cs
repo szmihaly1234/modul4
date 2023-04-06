@@ -12,5 +12,6 @@ namespace modul4.Logic
         void AddToRace(Athlete athlete);
         void RemoveFromRace(Athlete athlete);
         void SetupCollections(IList<Athlete> athletes, IList<Athlete> race);
+        void GetAthleteInfo(Athlete athlete);
     }
 }

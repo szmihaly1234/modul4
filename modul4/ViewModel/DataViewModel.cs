@@ -9,11 +9,15 @@ namespace modul4.ViewModel
 {
     public class DataViewModel
     {
-        public Athlete athlete { get; set; }
-        public DataViewModel(Athlete athlete)
+        public Athlete actual { get; set; }
+        public void Setup(Athlete athlete)
         {
-            this.athlete = athlete;
-            
+            this.actual = athlete;
+        }
+
+        public DataViewModel()
+        {
+
         }
     }
 }
